@@ -1,4 +1,4 @@
-nomes = ["Elton", "André", 33]
+nomes = ["Elton", "André", "Veiga"]
 person = {
   nome: "Elton",
   sobrenome: "Veiga",
@@ -33,9 +33,8 @@ for x, y in person do
   puts "Atributo: #{x}: Valor -> #{y}"
 end
 
-
-
 # REPETIÇÕES COM WHILE
+
 index = 0
 
 while index < nomes.size do
@@ -53,8 +52,6 @@ person[:idade].times do
   puts "Olá Mundo"
 end
 
-=end
-
 # REPETIÇÕES COM LOOP
 
 index = 0
@@ -67,3 +64,24 @@ loop do
     break
   end
 end
+
+# REPETIÇÕES COM EACH
+
+nomes.each do |nome|
+  puts nome
+end
+
+person.each do |chave, valor|
+  puts "chave: #{chave}: valor: #{valor}"
+end
+
+=end
+
+# REPETIÇÕES COM MAP
+
+# nomes.map! do |nome| <- o ! sobreescreve a lista
+nomes_completos = nomes.map do |nome|
+  nome + " Sobrenome"
+end
+
+puts nomes_completos
